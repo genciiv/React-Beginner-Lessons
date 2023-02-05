@@ -1,76 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-
 # ReactJS Tutorial for Beginners
 
 ## 1.What is React ?
@@ -86,3 +13,60 @@ React is declarative.
 React will make it painless for you to create complex UIs by abstracting away the difficult parts. 
 React will handle efficiently updating and rendering just the right components in your application when your data changes. 
 DOM updates which is one of the more expensive operations is handled gracefully in React.
+
+## 2.Components
+
+React components implement a render() method that takes input data and returns what to display. This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed by render() via this.props.
+
+JSX is optional and not required to use React. Try the Babel REPL to see the raw JavaScript code produced by the JSX compilation step.
+
+### A Stateful Component
+In addition to taking input data (accessed via this.props), a component can maintain internal state data (accessed via this.state). When a component’s state data changes, the rendered markup will be updated by re-invoking render().
+
+### An Application
+Using props and state, we can put together a small Todo application. This example uses state to track the current list of items as well as the text that the user has entered. Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation.
+
+
+## 3.Functional Component
+A functional component is a type of React component that is defined as a JavaScript function and doesn't have its own state or lifecycle methods. It receives props as an argument and returns a React element. It is used to present static data and can be used for simple components that don't require state or lifecycle methods. Example:
+
+Syntax :
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+## 4.Class Component
+
+A class component is a type of React component that is defined using a class in JavaScript. It extends the React.Component class and can have its own state and lifecycle methods. Class components are used to manage state and perform more complex logic, such as making API calls or handling interactions. Example:
+
+Syntax :
+
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+
+## 5.JSX
+
+JSX is a syntax extension for JavaScript that allows writing HTML-like code within your JavaScript code. It is used in React to define the structure of components and render UI elements. JSX makes it easier to write and understand the structure of a React component, as it allows you to write HTML-like code instead of using JavaScript functions to build the component. When the code is transpiled, it is transformed into JavaScript code that can be understood by the browser.
+
+Syntax :
+
+const element = <h1>Hello, World!</h1>;
+
+## 6.Props
+
+In React, props (short for "properties") are inputs to a component. They are passed down from a parent component to a child component and allow the child component to receive data and render dynamic content. The child component can access the values of the props using this.props. Props are read-only and cannot be changed within the child component, ensuring that the parent-child relationship remains unidirectional.
+
+example
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+ReactDOM.render(
+  <Welcome name="John" />,
+  document.getElementById('root')
+);
